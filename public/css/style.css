@@ -1,0 +1,42 @@
+ .add_todo {
+        float:center;
+        margin-left: 14%;
+    }
+
+  .p-back {
+  		background-color: #002db3!important;
+  }
+
+  .todo-fonts {
+  		font-size: 30px;
+  		color:#2929a3;
+  		font-weight: bold;
+  }
+
+  .todo-font {
+  		color:#2929a3;
+  		font-weight: bold;
+  }
+
+  .btn-purple {
+  	background-color: #002db3;
+  	color:#002db3;
+  	border-radius: 50%;
+  }
+
+ td {
+ 	 font-size: 16px;
+  }
+
+  .search_by_name {
+  	margin-left: 30%;
+  	font-size: 18px;
+  }
+
+.todo_check_status{
+
+  	margin-top: -10px
+}
+.description_todo {
+	border: white;
+}
