@@ -17,8 +17,8 @@
                         <input type="checkbox"  todo_id = "{{ $data->id }}" class="form-check-input todo_check_status" id="check1" name="check" value="something" @if($data->status == '1') checked @endif > <!--  --><!-- <input type ='text' name="description" value="{{$data->description}}"> -->
                     </label>
 
-                   <!--  <span class = "description_span" link_id = "{{ $data->id}}"> {{$data->description}} </span> -->
-                    <input type="text" name="description" value="{{$data->description}}" class="description_todo " todo_id = "{{ $data->id }}">
+                 
+                    <input type="text" name="description" value="{{$data->description}}" class="description_todo " todo_id = "{{ $data->id }}" title = "click to edit">
 
                 </td>
                 <!-- <td class="td_description" style="display: none">
@@ -30,7 +30,7 @@
                      <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                               </span>
-                                              <input type = "text" class = "datepicker-13" todo_id = "{{ $data->id }}" @if(!is_null($data->scheduled_date)) value = "{{ $data->scheduled_date }}" @endif>
+                                              <input type = "text" class = "datepicker-13" todo_id = "{{ $data->id }}" title = "click to edit date" @if(!is_null($data->scheduled_date)) value = "{{ $data->scheduled_date }}" @endif>
                 </div>
                 </td>
                 <td>
