@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="container mt-3">
+<div class="container mt-3 panel_div" >
     <div class="col-10">
         <div class="card">
             <div class="card-body table_body">
@@ -59,6 +59,7 @@
                     success: function (data) { 
                        $('.todo_input').val('');
                        showlist();
+                       $('.panel_div').show();
                        // $('.add_todo_div').hide();
                     }
                 }); 
@@ -97,6 +98,7 @@
 
                        $('.todo_input').val('');
                         $('.table_body').html(data);
+                        $('.panel_div').show();
                     }
                 }); 
                
@@ -119,6 +121,7 @@
                         success: function (data) { 
 
                             $('.table_body').html(data);
+                            $('.panel_div').show();
                         }
                      }); 
                 }
@@ -147,6 +150,7 @@
 
                     success: function (data) { 
                        $('.table_body').html(data);
+                       $('.panel_div').show();
                     }
                 }); 
          }

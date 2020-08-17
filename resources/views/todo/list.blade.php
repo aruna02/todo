@@ -4,6 +4,10 @@
       <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 <h4>List of Todos</h4>
+@php
+  $count = sizeof($todos);
+@endphp
+<span class="count_todos" count="{{ $count }}"></span>
 <table class="table">
       <tbody>
           @foreach($todos as $data)
@@ -40,6 +44,14 @@
 <script>
 
  $('document').ready(function() {
+
+    var count = $('.count_todos').attr('count');
+    if(count <= 0)
+    {
+        $('.panel_div').hide();
+    }
+    
+
     $('.datepicker-13').on('click', function() {
          $( this ).datepicker();
          $( this ).datepicker("show");
