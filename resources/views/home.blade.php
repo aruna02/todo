@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container mb-4">
     <h4>
-        <span class="todo-fonts"> Todos </span>
-        <input type="text" name="name" class="search_by_name" placeholder="search by name...">
-        <button class="add_todo btn btn-primary text-white btn-purple" data-original-title="Add todo"><i class="fa fa-plus"></i></button>
+    <span class="todo-fonts"> Todos </span>
+    <input type="text" name="name" class="search_by_name" placeholder="search by name...">
+    <button class="add_todo btn btn-primary text-white btn-purple" data-original-title="Add todo"><i class="fa fa-plus"></i></button>
     </h4>
 </div>
 
@@ -24,15 +26,9 @@
 </div>
 
 <div class="container mt-3 panel_div" >
-    <div class="col-10">
-        <div class="card">
-            <div class="card-body table_body">
-            </div>
-            <div class="filter_buttons text-right text-white">
-                <a class="btn btn-primary filter_button" status = 2 >All</a>
-                <a class="btn btn-info filter_button" status = 0>Pending</a>
-                <a class="btn btn-success filter_button" status = 1>Complete</a>
-            </div>
+    <div class="col-10 card_body">
+       
+           
         </div>
     </div>
 </div>
@@ -60,6 +56,7 @@
                        $('.todo_input').val('');
                        showlist();
                        $('.panel_div').show();
+
                        // $('.add_todo_div').hide();
                     }
                 }); 
@@ -76,35 +73,13 @@
 
         //for add todo btn 
         $('.add_todo').on('click',function() {
-            $('.add_todo_div').show();
-        });
+                $('.add_todo_div').show();
+         });
 
             //for input field
         $( "input[type='text']" ).keyup(function() {
             $('.danger_span').hide();
         });
-
-         $('.filter_button').on('click',function() {
-            
-                var status = $(this).attr('status');
-                $.ajax({
-                    type: 'GET',
-                  
-                    url: '/todo/'+status,
-                    
-                    
-
-                    success: function (data) { 
-
-                       $('.todo_input').val('');
-                        $('.table_body').html(data);
-                        $('.panel_div').show();
-                    }
-                }); 
-               
-            
-        });
-
 
          $('.search_by_name').on('keyup',function() {
             
@@ -120,7 +95,7 @@
 
                         success: function (data) { 
 
-                            $('.table_body').html(data);
+                            $('.card_body').html(data);
                             $('.panel_div').show();
                         }
                      }); 
@@ -135,21 +110,17 @@
             
         });
 
-
-         
-
-
     });
 
      function showlist() {
             $.ajax({
-                    type: 'GET',
+        type: 'GET',
                   
                     url: '/todo/2',
                     
 
-                    success: function (data) { 
-                       $('.table_body').html(data);
+                    success: function (data) {
+                       $('.card_body').html(data);
                        $('.panel_div').show();
                     }
                 }); 

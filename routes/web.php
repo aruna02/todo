@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/todo/{id}','TodoController@index')->name('todos');
 Route::get('/todo/add/{data}','TodoController@add')->name('savetodo');
-Route::post('/todo/updateDate','TodoController@updateTodo')->name('updatedate');
-Route::post('/todo/updateStatus','TodoController@updateStatus')->name('updatestatus');
+Route::post('/todo/update','TodoController@updateTodo')->name('update');
 Route::post('/todo/delete','TodoController@delete')->name('delete');
 Route::get('/todo/search/{name}','TodoController@searchByName')->name('search');

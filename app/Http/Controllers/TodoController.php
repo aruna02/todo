@@ -10,13 +10,15 @@ class TodoController extends Controller
     public function index($status)
     {
     	$id = auth()->user()->id;
-    	if($status != 2){
+
+        $todos = Todo::orderBy('id','DESC')->where('user_id',$id)->get();
+
+
+    	if($status != 2) {
     		$todos = Todo::orderBy('id','DESC')->where('user_id',$id)->where('status',$status)->get();
     	}
-    	else{
-    		
-    		$todos = Todo::orderBy('id','DESC')->where('user_id',$id)->get();
-    	}
+        
+    	
     	return view('todo.list',compact('todos'));
     }
 
